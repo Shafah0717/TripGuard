@@ -1,0 +1,1050 @@
+{
+  "dataset_id": "tripguard_uae_visa_requirements",
+  "schema_version": "1.0.1",
+  "destination_country": "United Arab Emirates",
+  "destination_emirate": "Dubai",
+  "initial_applicant_profile": {
+    "nationality": "Indian",
+    "passport_type": "ordinary",
+    "purpose": "tourism",
+    "scope_note": "This dataset is scoped to Indian ordinary passport holders applying for tourism. It is not a determination of visa eligibility or approval."
+  },
+  "research_metadata": {
+    "generated_at": "2026-10-09T20:53:00+05:30",
+    "last_verified_at": "2026-10-09",
+    "research_status": "pending_review",
+    "version_notes": [
+      "Scoped to Indian ordinary passport holders travelling to Dubai/UAE for tourism.",
+      "Applied audit corrections: route-specific requirements are distinguished; five-year financial threshold remains human-reviewed; single-entry Indian eligibility remains unconfirmed by the source set.",
+      "This file was parsed and validated as JSON. Source claims have not been independently re-researched in this update."
+    ]
+  },
+  "visa_types": [
+    {
+      "id": "tourist_30_day_single_entry",
+      "official_name": "Issuance of a single-entry tourist visa (30 days)",
+      "display_name": "30-Day Tourist Visa",
+      "category": "tourism",
+      "product_status": "provisional_pending_eligibility_confirmation",
+      "entry_type": "single",
+      "permitted_stay": {
+        "value": 30,
+        "unit": "days",
+        "conditions": [
+          "Single visit; duration is for stay, not visa validity."
+        ]
+      },
+      "visa_validity": {
+        "value": null,
+        "unit": "days",
+        "conditions": [
+          "Not specified on GDRFA Dubai service page."
+        ]
+      },
+      "eligibility": {
+        "nationality": "Indian",
+        "conditions": [
+          "The accessed GDRFA service page describes the tourist visa product but does not explicitly establish eligibility for Indian ordinary-passport applicants. Confirm with the authorized issuing channel before presenting this as an available option."
+        ],
+        "verified": false,
+        "source_ids": [
+          "SRC_001"
+        ]
+      },
+      "application_route": {
+        "sponsor_required": true,
+        "authorized_channels": [
+          "UAE tourism establishment / accredited tourism office in Dubai; GDRFA website or smart application route described, with accredited tourism office issuance."
+        ],
+        "steps": [
+          "Login using UAE Pass or username.",
+          "Search for the service.",
+          "Complete application information.",
+          "Pay applicable fees."
+        ],
+        "source_ids": [
+          "SRC_001"
+        ],
+        "route_notes": [
+          "The GDRFA service page describes digital application steps, but says this visa type is issued through accredited tourism offices in the emirate. Confirm the correct submission and issuance channel with the agency."
+        ]
+      },
+      "financial_requirements": [],
+      "documents": [
+        {
+          "id": "personal_photo",
+          "name": "Personal Photograph",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "One personal photograph required; official dimensions/file format not stated."
+            ]
+          },
+          "verification_rules": [],
+          "source_ids": [
+            "SRC_001"
+          ],
+          "evidence_notes": [
+            "GDRFA lists one personal photo as a service requirement."
+          ],
+          "human_review_required": true
+        },
+        {
+          "id": "passport_copy",
+          "name": "Passport Copy",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "Passport/travel document valid at least six months."
+            ]
+          },
+          "verification_rules": [
+            {
+              "id": "passport_expiry_check",
+              "rule_type": "passport_expiry_check",
+              "description": "Flag if passport validity is under six months at application; exact reference date should be confirmed with channel.",
+              "parameters": {
+                "minimum_validity_days": null,
+                "stated_period": "at least 6 months"
+              },
+              "severity": "review",
+              "source_ids": [
+                "SRC_001"
+              ],
+              "human_review_required": true
+            }
+          ],
+          "source_ids": [
+            "SRC_001"
+          ],
+          "evidence_notes": [
+            "GDRFA requires passport copy and passport validity >= 6 months."
+          ],
+          "human_review_required": true
+        },
+        {
+          "id": "travel_ticket",
+          "name": "Return_or_Onward_Ticket",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "Ticket to continue journey or leave UAE; no format/specification stated."
+            ]
+          },
+          "verification_rules": [],
+          "source_ids": [
+            "SRC_001"
+          ],
+          "evidence_notes": [
+            "GDRFA terms require continuing or departure ticket."
+          ],
+          "human_review_required": true
+        },
+        {
+          "id": "medical_insurance",
+          "name": "UAE-valid Medical Insurance",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "Medical insurance valid in UAE; no duration specified on this service page."
+            ]
+          },
+          "verification_rules": [],
+          "source_ids": [
+            "SRC_001"
+          ],
+          "evidence_notes": [
+            "GDRFA requires medical insurance valid in UAE."
+          ],
+          "human_review_required": true
+        }
+      ],
+      "fees": [
+        {
+          "amount": 200,
+          "currency": "AED",
+          "description": "30-day visa fee, plus 5% VAT; other charges may vary.",
+          "source_ids": [
+            "SRC_001"
+          ]
+        }
+      ],
+      "processing_time": {
+        "value": 48,
+        "unit": "hours",
+        "conditions": [
+          "Expected completion time; not a guaranteed decision time."
+        ],
+        "source_ids": [
+          "SRC_001"
+        ]
+      },
+      "extension_rules": [
+        {
+          "status": "unverified",
+          "description": "GDRFA lists related extension services, but category-specific eligibility and duration are not established by the source accessed.",
+          "source_ids": [
+            "SRC_001"
+          ]
+        }
+      ],
+      "restrictions": [],
+      "sources": [
+        "SRC_001"
+      ],
+      "last_verified_at": "2026-10-09",
+      "human_review_required": true,
+      "applicant_scope": {
+        "nationality": "Indian",
+        "passport_type": "ordinary",
+        "purpose": "tourism"
+      },
+      "conditional_documents": [
+        {
+          "id": "national_identity_document_for_specific_nationalities",
+          "name": "National identity document (conditional)",
+          "requirement_status": "not_applicable_to_current_indian_scope",
+          "applicability": {
+            "scope": "specific_nationalities_only",
+            "conditions": [
+              "GDRFA page identifies Iraq, Pakistan, Iran and Afghanistan for this additional document."
+            ]
+          },
+          "mandatory_for_current_scope": false,
+          "source_ids": [
+            "SRC_001"
+          ],
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "tourist_60_day_single_entry",
+      "official_name": "Issuance of a single-entry tourist visa (60 days)",
+      "display_name": "60-Day Tourist Visa",
+      "category": "tourism",
+      "product_status": "provisional_pending_eligibility_confirmation",
+      "entry_type": "single",
+      "permitted_stay": {
+        "value": 60,
+        "unit": "days",
+        "conditions": [
+          "Single visit; duration is for stay, not visa validity."
+        ]
+      },
+      "visa_validity": {
+        "value": null,
+        "unit": "days",
+        "conditions": [
+          "Not specified on GDRFA Dubai service page."
+        ]
+      },
+      "eligibility": {
+        "nationality": "Indian",
+        "conditions": [
+          "The accessed GDRFA service page describes the tourist visa product but does not explicitly establish eligibility for Indian ordinary-passport applicants. Confirm with the authorized issuing channel before presenting this as an available option."
+        ],
+        "verified": false,
+        "source_ids": [
+          "SRC_001"
+        ]
+      },
+      "application_route": {
+        "sponsor_required": true,
+        "authorized_channels": [
+          "UAE tourism establishment / accredited tourism office in Dubai; GDRFA website or smart application route described, with accredited tourism office issuance."
+        ],
+        "steps": [
+          "Login using UAE Pass or username.",
+          "Search for the service.",
+          "Complete application information.",
+          "Pay applicable fees."
+        ],
+        "source_ids": [
+          "SRC_001"
+        ],
+        "route_notes": [
+          "The GDRFA service page describes digital application steps, but says this visa type is issued through accredited tourism offices in the emirate. Confirm the correct submission and issuance channel with the agency."
+        ]
+      },
+      "financial_requirements": [],
+      "documents": [
+        {
+          "id": "personal_photo",
+          "name": "Personal Photograph",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "One personal photograph required; official dimensions/file format not stated."
+            ]
+          },
+          "verification_rules": [],
+          "source_ids": [
+            "SRC_001"
+          ],
+          "evidence_notes": [
+            "GDRFA lists one personal photo as a service requirement."
+          ],
+          "human_review_required": true
+        },
+        {
+          "id": "passport_copy",
+          "name": "Passport Copy",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "Passport/travel document valid at least six months."
+            ]
+          },
+          "verification_rules": [
+            {
+              "id": "passport_expiry_check",
+              "rule_type": "passport_expiry_check",
+              "description": "Flag if passport validity is under six months at application; exact reference date should be confirmed with channel.",
+              "parameters": {
+                "minimum_validity_days": null,
+                "stated_period": "at least 6 months"
+              },
+              "severity": "review",
+              "source_ids": [
+                "SRC_001"
+              ],
+              "human_review_required": true
+            }
+          ],
+          "source_ids": [
+            "SRC_001"
+          ],
+          "evidence_notes": [
+            "GDRFA requires passport copy and passport validity >= 6 months."
+          ],
+          "human_review_required": true
+        },
+        {
+          "id": "travel_ticket",
+          "name": "Return_or_Onward_Ticket",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "Ticket to continue journey or leave UAE; no format/specification stated."
+            ]
+          },
+          "verification_rules": [],
+          "source_ids": [
+            "SRC_001"
+          ],
+          "evidence_notes": [
+            "GDRFA terms require continuing or departure ticket."
+          ],
+          "human_review_required": true
+        },
+        {
+          "id": "medical_insurance",
+          "name": "UAE-valid Medical Insurance",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "Medical insurance valid in UAE; no duration specified on this service page."
+            ]
+          },
+          "verification_rules": [],
+          "source_ids": [
+            "SRC_001"
+          ],
+          "evidence_notes": [
+            "GDRFA requires medical insurance valid in UAE."
+          ],
+          "human_review_required": true
+        }
+      ],
+      "fees": [
+        {
+          "amount": 300,
+          "currency": "AED",
+          "description": "60-day visa fee, plus 5% VAT; other charges may vary.",
+          "source_ids": [
+            "SRC_001"
+          ]
+        }
+      ],
+      "processing_time": {
+        "value": 48,
+        "unit": "hours",
+        "conditions": [
+          "Expected completion time; not a guaranteed decision time."
+        ],
+        "source_ids": [
+          "SRC_001"
+        ]
+      },
+      "extension_rules": [
+        {
+          "status": "unverified",
+          "description": "GDRFA lists related extension services, but category-specific eligibility and duration are not established by the source accessed.",
+          "source_ids": [
+            "SRC_001"
+          ]
+        }
+      ],
+      "restrictions": [],
+      "sources": [
+        "SRC_001"
+      ],
+      "last_verified_at": "2026-10-09",
+      "human_review_required": true,
+      "applicant_scope": {
+        "nationality": "Indian",
+        "passport_type": "ordinary",
+        "purpose": "tourism"
+      },
+      "conditional_documents": [
+        {
+          "id": "national_identity_document_for_specific_nationalities",
+          "name": "National identity document (conditional)",
+          "requirement_status": "not_applicable_to_current_indian_scope",
+          "applicability": {
+            "scope": "specific_nationalities_only",
+            "conditions": [
+              "GDRFA page identifies Iraq, Pakistan, Iran and Afghanistan for this additional document."
+            ]
+          },
+          "mandatory_for_current_scope": false,
+          "source_ids": [
+            "SRC_001"
+          ],
+          "human_review_required": false
+        }
+      ]
+    },
+    {
+      "id": "tourist_5_year_multiple_entry",
+      "official_name": "Issuing a multi-entry tourist visa (5 years)",
+      "display_name": "Five-Year Multiple-Entry Tourist Visa",
+      "category": "tourism",
+      "product_status": "provisional_pending_individual_scope_confirmation",
+      "entry_type": "multiple",
+      "permitted_stay": {
+        "value": 90,
+        "unit": "days",
+        "conditions": [
+          "GDRFA specifies continuous or intermittent stay up to 90 days in any one year measured from first entry; may extend for similar period subject to total 180 days/year.",
+          "ICP specifies no more than 90 days within a single year and extension up to 180 days total; unused days do not carry over."
+        ]
+      },
+      "visa_validity": {
+        "value": 5,
+        "unit": "years",
+        "conditions": [
+          "GDRFA states five years from issue; first-entry window described as two months, extendable two additional months. ICP describes first-entry validity as 60 days; confirm applicable Dubai rule before use."
+        ]
+      },
+      "eligibility": {
+        "nationality": "Indian",
+        "conditions": [
+          "Official GDRFA and federal sources describe the five-year multiple-entry product as available to foreign nationals/all nationalities. The ICP page in this source set is explicitly a family-group service; confirm the appropriate individual-applicant route for an Indian ordinary-passport holder before use."
+        ],
+        "verified": false,
+        "source_ids": [
+          "SRC_002",
+          "SRC_003",
+          "SRC_004"
+        ]
+      },
+      "application_route": {
+        "sponsor_required": false,
+        "authorized_channels": [
+          "GDRFA Dubai digital channels, customer happiness centers, Amer service centers; ICP website/app for federal service. This GDRFA product does not require host/guarantor."
+        ],
+        "steps": [
+          "Log in using UAE Pass or username on GDRFA digital channel, or submit through listed service center.",
+          "Complete application data and submit required documents.",
+          "Pay applicable fees/guarantee.",
+          "Receive final product through channel; return method not further specified."
+        ],
+        "source_ids": [
+          "SRC_002",
+          "SRC_003"
+        ]
+      },
+      "financial_requirements": [
+        {
+          "id": "bank_statement_period",
+          "type": "bank_statement_period",
+          "amount": null,
+          "currency": null,
+          "period": "6 months",
+          "conditions": [],
+          "requirement_status": "mandatory",
+          "source_ids": [
+            "SRC_002",
+            "SRC_003"
+          ],
+          "evidence_notes": [
+            "Official pages require a six-month bank statement/lookback."
+          ]
+        },
+        {
+          "id": "minimum_bank_balance",
+          "type": "minimum_balance",
+          "amount": 4000,
+          "currency": "USD",
+          "period": "over past 6 months; ICP wording: minimum balance of USD 4,000 per month",
+          "conditions": [],
+          "requirement_status": "published_threshold_interpretation_unverified",
+          "source_ids": [
+            "SRC_002",
+            "SRC_003",
+            "SRC_004"
+          ],
+          "evidence_notes": [
+            "Official sources mention USD 4,000 or equivalent, but differ in wording (over the past six months versus minimum USD 4,000 per month). Do not use as an automatic pass/fail rule. A reviewer must confirm the applicable interpretation and evidence with the selected official channel."
+          ],
+          "machine_check_allowed": false
+        }
+      ],
+      "documents": [
+        {
+          "id": "personal_photo",
+          "name": "Personal Photograph",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "One personal photograph required; official dimensions/file format not stated."
+            ]
+          },
+          "verification_rules": [],
+          "source_ids": [
+            "SRC_002",
+            "SRC_003"
+          ],
+          "evidence_notes": [
+            "Both official services list a personal photo."
+          ],
+          "human_review_required": true
+        },
+        {
+          "id": "passport_copy",
+          "name": "Passport Copy",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "Passport/travel document valid at least six months."
+            ]
+          },
+          "verification_rules": [
+            {
+              "id": "passport_expiry_check",
+              "rule_type": "passport_expiry_check",
+              "description": "Flag passport validity below six months; verify assessment date with authority.",
+              "parameters": {
+                "minimum_validity_days": null,
+                "stated_period": "at least 6 months"
+              },
+              "severity": "review",
+              "source_ids": [
+                "SRC_002",
+                "SRC_003"
+              ],
+              "human_review_required": true
+            }
+          ],
+          "source_ids": [
+            "SRC_002",
+            "SRC_003"
+          ],
+          "evidence_notes": [
+            "Passport validity at least six months."
+          ],
+          "human_review_required": true
+        },
+        {
+          "id": "bank_statement",
+          "name": "Bank Statement",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "Past six months; ICP specifies official bank-issued, stamped, signed, in color."
+            ]
+          },
+          "verification_rules": [
+            {
+              "id": "bank_statement_period_check",
+              "rule_type": "bank_statement_period_check",
+              "description": "Check statement covers the stated six-month lookback; do not infer account authenticity.",
+              "parameters": {
+                "period": "6 months"
+              },
+              "severity": "review",
+              "source_ids": [
+                "SRC_002",
+                "SRC_003"
+              ],
+              "human_review_required": true
+            },
+            {
+              "id": "minimum_balance_human_review",
+              "rule_type": "human_review",
+              "description": "Do not automatically pass/fail based on USD 4,000. Present extracted figures and statement period to a human reviewer because official source wording differs.",
+              "parameters": {
+                "published_amount": 4000,
+                "currency": "USD",
+                "automatic_decision": false
+              },
+              "severity": "review",
+              "source_ids": [
+                "SRC_002",
+                "SRC_003",
+                "SRC_004"
+              ],
+              "human_review_required": true
+            }
+          ],
+          "source_ids": [
+            "SRC_002",
+            "SRC_003"
+          ],
+          "evidence_notes": [
+            "GDRFA requires six-month statement and USD 4,000/equivalent over six months; ICP specifies official stamped, signed, color statement and minimum balance USD 4,000 per month over past six months. Wording differs; retain for human interpretation."
+          ],
+          "human_review_required": true
+        },
+        {
+          "id": "health_insurance",
+          "name": "UAE-issued Health Insurance",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "GDRFA requires health insurance valid in the UAE. The ICP/federal source additionally states UAE-issued insurance valid for 180 days. Apply the 180-day/UAE-issued condition only when confirmed for the selected application route; do not generalize it to every route."
+            ]
+          },
+          "verification_rules": [],
+          "source_ids": [
+            "SRC_002",
+            "SRC_003",
+            "SRC_004"
+          ],
+          "evidence_notes": [
+            "GDRFA requires health insurance; ICP/UAE portal specify UAE-issued/valid 180 days."
+          ],
+          "human_review_required": true,
+          "route_specific_requirements": [
+            {
+              "route": "GDRFA Dubai",
+              "condition": "Health insurance valid in UAE; source does not specify a 180-day duration."
+            },
+            {
+              "route": "ICP federal service",
+              "condition": "Source states UAE-issued policy valid for 180 days; confirm that this is the selected route and applies to this applicant."
+            }
+          ]
+        },
+        {
+          "id": "travel_ticket",
+          "name": "Return_or_Connecting_Ticket",
+          "description": null,
+          "requirement_status": "mandatory",
+          "applicability": {
+            "scope": "all_applicants",
+            "conditions": []
+          },
+          "mandatory": true,
+          "specifications": {
+            "minimum_validity_days": null,
+            "accepted_formats": [],
+            "image_requirements": [],
+            "translation_requirements": [],
+            "attestation_requirements": [],
+            "other_conditions": [
+              "Copy of ticket showing continuing/return journey."
+            ]
+          },
+          "verification_rules": [],
+          "source_ids": [
+            "SRC_002",
+            "SRC_003",
+            "SRC_004"
+          ],
+          "evidence_notes": [
+            "Official sources require round-trip/continuing/return ticket."
+          ],
+          "human_review_required": true
+        }
+      ],
+      "fees": [
+        {
+          "description": "GDRFA fee schedule lists application AED 100, issuance AED 500, guarantee AED 3,000, warranty service AED 21, collection/return guarantee AED 20, knowledge/innovation dirham AED 10 each, service AED 52.5; displayed total AED 3,713, may vary.",
+          "amount": 3713,
+          "currency": "AED",
+          "source_ids": [
+            "SRC_002"
+          ]
+        },
+        {
+          "description": "ICP service lists application AED 100, issuance AED 500, visa financial guarantee AED 3,000, financial guarantee deposit fee AED 20, smart services AED 100.",
+          "amount": null,
+          "currency": "AED",
+          "source_ids": [
+            "SRC_003"
+          ]
+        }
+      ],
+      "processing_time": {
+        "value": 48,
+        "unit": "hours",
+        "conditions": [
+          "GDRFA expected completion time; ICP states 2 days. Not guaranteed."
+        ],
+        "source_ids": [
+          "SRC_002",
+          "SRC_003"
+        ]
+      },
+      "extension_rules": [
+        {
+          "status": "conditional",
+          "description": "A stay may be extended for a similar period, with total stay not exceeding 180 days per year; exact extension procedure/approval must be confirmed.",
+          "source_ids": [
+            "SRC_002",
+            "SRC_003",
+            "SRC_004"
+          ]
+        }
+      ],
+      "restrictions": [
+        "ICP: year counted from first UAE entry; days unused cannot be carried forward.",
+        "ICP family-group condition: head of family must enter with other family members; minors under 18 must be accompanied by parent(s). Applicability to individual applications must be checked.",
+        "Do not apply the ICP family-group conditions as universal rules for this individual applicant scope; confirm the selected service and applicant type."
+      ],
+      "sources": [
+        "SRC_002",
+        "SRC_003",
+        "SRC_004"
+      ],
+      "last_verified_at": "2026-10-09",
+      "human_review_required": true,
+      "applicant_scope": {
+        "nationality": "Indian",
+        "passport_type": "ordinary",
+        "purpose": "tourism"
+      },
+      "conditional_documents": [
+        {
+          "id": "proof_of_residence_during_stay",
+          "name": "Proof of residence/accommodation during stay",
+          "requirement_status": "route_specific_needs_confirmation",
+          "applicability": {
+            "scope": "ICP_five_year_route_only",
+            "conditions": [
+              "Included in the audit as an ICP-route requirement; not established as universal across GDRFA and ICP routes."
+            ]
+          },
+          "mandatory_for_all_routes": false,
+          "specifications": {
+            "other_conditions": [
+              "Ask the applicant/agency to confirm acceptable evidence with ICP if using this route; do not block all applicants automatically."
+            ]
+          },
+          "source_ids": [
+            "SRC_003"
+          ],
+          "human_review_required": true
+        },
+        {
+          "id": "national_identity_document_for_specific_nationalities",
+          "name": "National identity document (conditional)",
+          "requirement_status": "not_applicable_to_current_indian_scope",
+          "applicability": {
+            "scope": "specific_nationalities_only",
+            "conditions": [
+              "Audit notes this is conditional for Afghanistan, Iran and Iraq on the ICP route; it does not apply to the current Indian-only scope."
+            ]
+          },
+          "mandatory_for_current_scope": false,
+          "source_ids": [
+            "SRC_003"
+          ],
+          "human_review_required": false
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC_001",
+      "title": "Issuance of a single-entry tourist visa",
+      "organization": "General Directorate of Residency and Foreigners Affairs – Dubai (GDRFA Dubai)",
+      "url": "https://gdrfad.gov.ae/en/services/f9e586fe-0642-11ec-0320-0050569629e8",
+      "source_type": "official_government",
+      "accessed_at": "2026-10-09",
+      "published_at": null,
+      "relevant_visa_types": [
+        "tourist_30_day_single_entry",
+        "tourist_60_day_single_entry"
+      ],
+      "supports": [
+        "availability and sponsor route",
+        "30/60-day stay product",
+        "required documents",
+        "passport validity, ticket, insurance",
+        "fees and application steps",
+        "processing time"
+      ],
+      "evidence_excerpt": "The foreigner is granted an entry visa for a single visit for tourism for a period of 30 or 60 days, sponsor/host should be an establishment working in tourism. Requirements: one personal photo, passport copy. Passport validity not less than six months; ticket to continue journey or leave UAE; medical insurance valid in UAE. Fees: AED 200 (30-day), AED 300 (60-day), plus 5% VAT; expected completion 48 hours. Only accredited tourism offices in the emirate can issue this kind of visa.",
+      "reliability_notes": [
+        "Official Dubai immigration service page; fee total may vary according to circumstances."
+      ]
+    },
+    {
+      "id": "SRC_002",
+      "title": "Issuing a multi-entry tourist visa (5 years)",
+      "organization": "General Directorate of Residency and Foreigners Affairs – Dubai (GDRFA Dubai)",
+      "url": "https://www.gdrfad.gov.ae/en/services/7fe37963-b7f8-11ed-5210-4cd98f768936",
+      "source_type": "official_government",
+      "accessed_at": "2026-10-09",
+      "published_at": null,
+      "relevant_visa_types": [
+        "tourist_5_year_multiple_entry"
+      ],
+      "supports": [
+        "five-year availability",
+        "self-sponsored route",
+        "documents and financial threshold",
+        "validity/stay limits",
+        "fees and process",
+        "48-hour completion"
+      ],
+      "evidence_excerpt": "Tourism visa for several trips, valid for five years from issue, without guarantor/host. Requirements: photo, passport copy valid at least six months, six months bank statement, health insurance, round-trip ticket. Bank balance $4,000 or equivalent over six months. Continuous or intermittent stay not exceeding 90 days in any one year, extendable for similar period if total does not exceed 180 days/year. Fees list totals AED 3,713; expected completion 48 hours. Entry valid within two months of issue, extendable two additional months.",
+      "reliability_notes": [
+        "Official GDRFA Dubai page; its entry-validity language differs in detail from ICP page, so review before operational use."
+      ]
+    },
+    {
+      "id": "SRC_003",
+      "title": "Issuance of a long-term multiple-entry tourist visa for a family group – 5 years",
+      "organization": "Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)",
+      "url": "https://icp.gov.ae/en/services-details/?serviceid=68e73f2f5ae59b00117389ea",
+      "source_type": "official_government",
+      "accessed_at": "2026-10-09",
+      "published_at": "2024-12-11",
+      "relevant_visa_types": [
+        "tourist_5_year_multiple_entry"
+      ],
+      "supports": [
+        "five-year service/all nationality eligibility",
+        "bank requirement and statement specs",
+        "insurance and document list",
+        "entry validity and stay caps",
+        "family-group conditions",
+        "fees and processing estimate"
+      ],
+      "evidence_excerpt": "Five-year multiple-entry tourist visa without sponsor, available to all nationalities. Bank statement stamped, signed, in color, issued by bank, showing minimum balance of USD 4,000 per month or equivalent over past six months. UAE-issued health insurance valid 180 days. Entry visa valid 60 days from issuance for first entry; stay cap 90 days within a year from first entry, extendable same length subject to 180 days total/year. Required list includes passport, photo, insurance, bank statement, return/connecting ticket. Application AED 100, issuance AED 500, guarantee AED 3,000, guarantee deposit AED 20, smart services AED 100; completion 2 days.",
+      "reliability_notes": [
+        "Official federal service card; title says family group, so single-applicant scope should be confirmed. Page last updated December 11, 2024 despite site footer 2026."
+      ]
+    },
+    {
+      "id": "SRC_004",
+      "title": "Tourist visa",
+      "organization": "UAE Government Portal (u.ae)",
+      "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/types-of-visas/tourist-visa",
+      "source_type": "official_government",
+      "accessed_at": "2026-10-09",
+      "published_at": "2026-10-01",
+      "relevant_visa_types": [
+        "tourist_30_day_single_entry",
+        "tourist_60_day_single_entry",
+        "tourist_5_year_multiple_entry"
+      ],
+      "supports": [
+        "general tourist visa channels",
+        "five-year all-nationality eligibility, stay, financial and insurance requirements",
+        "licensed agent conditions"
+      ],
+      "evidence_excerpt": "Tourist visas can be applied for through airlines, hotels and travel agents. Five-year multiple-entry visa is self-sponsored, issued for all nationalities, permits 90 days per visit and can be extended for further 90 days. Requirements include USD 4,000 bank balance over last six months, UAE-valid health insurance valid 180 days, and continuing/return ticket. UAE-based airline, tour agency or hotel applies on applicant’s behalf; licensed agent/hotel route may require ticket purchase and hotel reservation with it.",
+      "reliability_notes": [
+        "Official UAE government portal; general overview, not full category-specific Dubai checklist."
+      ]
+    }
+  ],
+  "limitations": [
+    "Research reflects accessed official pages on 2026-10-09; requirements and fees can change.",
+    "30/60-day service page does not specify product visa validity, extension eligibility/duration, photo dimensions, file formats, or channel processing details beyond expected service completion.",
+    "No official source accessed explicitly establishes Indian ordinary-passport-specific eligibility for the single-entry route; confirm applicant eligibility with authorized issuing channel.",
+    "Five-year ICP service is explicitly labeled for a family group; individual application applicability should be confirmed.",
+    "Official sources phrase USD 4,000 financial evidence differently; do not automatically interpret as daily/monthly balance without human review.",
+    "Neither document readability nor automated consistency checks establish authenticity or detect forgery conclusively.",
+    "Accommodation details and application form copy were not established as universal requirements; no requirement inferred.",
+    "No conflicting/outdated non-official sources were used; ICP page shows service update December 11, 2024, while GDRFA pages are current as accessed.",
+    "This version is restricted to Indian ordinary passport holders applying for tourism; it does not establish nationality-specific eligibility for every listed product.",
+    "The 30-day and 60-day single-entry products remain provisional until an authorized channel confirms eligibility and process for Indian ordinary-passport applicants.",
+    "The five-year product remains provisional until the correct individual-applicant route is confirmed; the accessed ICP page is explicitly for a family group.",
+    "The USD 4,000 financial evidence wording differs among official sources and must not be converted into an automatic pass/fail rule.",
+    "Proof of residence/accommodation is treated as route-specific pending confirmation, not a universal requirement.",
+    "Identity-document requirements listed for other nationalities are explicitly not applicable to the current Indian-only scope.",
+    "The audit report indicated the five-year insurance and residence details are route-specific. This update preserves that distinction; it does not independently verify new official pages."
+  ],
+  "supported_applicant_scope": {
+    "nationality": "Indian",
+    "passport_type": "ordinary",
+    "purpose": "tourism",
+    "destination_country": "United Arab Emirates",
+    "destination_emirate": "Dubai",
+    "unsupported_applicants": [
+      "Non-Indian nationals",
+      "Diplomatic or official passport holders",
+      "Non-tourism purposes"
+    ],
+    "scope_enforcement": "Reject or route outside this checklist when the applicant profile does not match this scope."
+  },
+  "verification_policy": {
+    "mode": "document_readiness_assistance_not_visa_decision",
+    "automatic_checks_allowed": [
+      "document_presence",
+      "basic_file_readability",
+      "OCR_extraction_with_confidence",
+      "passport_expiry_flag_for_human_review",
+      "cross_document_name_or_date_mismatch_flag"
+    ],
+    "never_automatically_decide": [
+      "visa_eligibility",
+      "document_authenticity_or_fraud",
+      "minimum_bank_balance_pass_fail",
+      "visa_approval_probability",
+      "official_visa_approval"
+    ],
+    "low_confidence_action": "request_human_review_or_reupload; do not mark as verified",
+    "official_decision_disclaimer": "TripGuard checks application readiness only. The relevant UAE authority or authorized issuing channel makes eligibility and visa decisions."
+  }
+}

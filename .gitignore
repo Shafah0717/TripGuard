@@ -1,0 +1,107 @@
+# ---------------------------------------------------------------------------
+# TripGuard — repository-wide .gitignore
+# Covers the Android app, the FastAPI backend and the React/Vite website.
+# ---------------------------------------------------------------------------
+
+# --- Python / FastAPI backend ---------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test / tooling caches
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+htmlcov/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Type checkers / linters
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+
+# --- Local database & runtime state ----------------------------------------
+# SQLite dev database and its write-ahead/shared-memory side files.
+data/*.db
+data/*.db-shm
+data/*.db-wal
+*.sqlite
+*.sqlite3
+
+# --- Secrets / local config -------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+
+# --- Android / Kotlin / Gradle ---------------------------------------------
+# Gradle caches and build output
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+
+# Local machine config (contains the absolute SDK path)
+local.properties
+
+# Kotlin
+.kotlin/
+
+# Keystores / signing
+*.jks
+*.keystore
+
+# --- Node / React / Vite website -------------------------------------------
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+coverage/
+*.tsbuildinfo
+
+# --- Editors / OS -----------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
