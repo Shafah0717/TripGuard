@@ -149,4 +149,4 @@ Full request/response shapes for the traveller app contract live in
 
 ## License
 
-Not yet licensed. All rights reserved until a license is added.
+This project is licensed under the MIT License — see [LICENSE](LICENSE).
